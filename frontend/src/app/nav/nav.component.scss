@@ -1,0 +1,35 @@
+header {
+    background: #F7F8FA;
+    border-bottom: 1px solid black;
+    
+    a {
+        color: #525A65;
+    }
+
+    .logo {
+        font-weight: bold;
+    }
+
+    nav {
+        justify-self: right;
+    
+        ul {
+            list-style-type: none;
+            margin: 0; padding: 0;
+
+            li {
+                float: left;
+
+                a {
+                    padding: 1.5em;
+                    text-transform: uppercase;
+                    font-size: .8em;
+
+                    &:hover {
+                        background: rgba(213, 215, 218, 0.801);
+                    }
+                }
+            }
+        }
+    }
+}
