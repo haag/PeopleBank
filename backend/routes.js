@@ -1,10 +1,9 @@
 const express = require('express')
 const router = express.Router()
-
+const personService = require('./person.service')
 router.get('/heroes', (req, res) => {
-    res.send(200, [
-        {"id": 10, "name": "John", "saying": "This is hard" }
-    ])
+    personService.getPeople(req, res)
+
 })
 
 module.exports = router
