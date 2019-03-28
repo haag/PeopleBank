@@ -1,4 +1,4 @@
-const Person = require('./mongo-model')
+const Person = require('./person-model')
 const ReadPreference = require('mongodb').ReadPreference;
 require('./mongo').connect()
 
@@ -74,5 +74,8 @@ function postPerson(req, res) {
   }
 
 module.exports = {
-    getPeople
+    getPeople,
+    postPerson,
+    putPerson,
+    deletePerson
 }

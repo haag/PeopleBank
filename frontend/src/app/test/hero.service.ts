@@ -11,18 +11,18 @@ export class HeroService {
   constructor(private http: HttpClient) {}
 
   getHeroes() {
-    return this.http.get<Array<Hero>>(`${baseURL}${api}/heroes`);
+    return this.http.get<Array<Hero>>(`${baseURL}${api}/people`);
   }
 
   deleteHero(hero: Hero) {
-    return this.http.delete(`${baseURL}${api}/hero/${hero.id}`);
+    return this.http.delete(`${baseURL}${api}/person/${hero.id}`);
   }
 
   addHero(hero: Hero) {
-    return this.http.post<Hero>(`${baseURL}${api}/hero/`, hero);
+    return this.http.post<Hero>(`${baseURL}${api}/person/`, hero);
   }
 
   updateHero(hero: Hero) {
-    return this.http.put<Hero>(`${baseURL}${api}/hero/${hero.id}`, hero);
+    return this.http.put<Hero>(`${baseURL}${api}/person/${hero.id}`, hero);
   }
 }
