@@ -13,6 +13,8 @@ const personSchema = new Schema({
     birthdate: Number,
     siblings: Number,
     birthOrder: Number,
+    phone: Number,
+    email: String,
     
     //Default
     // id: { type: Number, required: true },
