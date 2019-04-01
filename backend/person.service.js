@@ -1,6 +1,6 @@
 const Person = require('./person-model')
 const ReadPreference = require('mongodb').ReadPreference;
-require('./mongo').connect()
+require('./mongoConnect').connect()
 
 function getPeople(req, res) {
     const docquery = Person.find({}).read(ReadPreference.NEAREST);
