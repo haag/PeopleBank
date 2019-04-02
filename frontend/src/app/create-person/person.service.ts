@@ -10,19 +10,15 @@ const baseURL = 'http://localhost:4000';
 export class PersonService {
   constructor(private http: HttpClient) {}
 
-  getPeople() {
-    console.log("GET PEOPLE")
-    console.log("GET PEOPLE")
-    this.http.get<Array<Person>>(`${baseURL}${api}/people`);
-    return 
-  }
+    getPeople() {
+      return this.http.get<Array<Person>>(`${baseURL}${api}/people`);
+    }
   
     addPerson(person: Person) {
       return this.http.post<Person>(`${baseURL}${api}/person/`, person);
     }
     
     updatePerson(person: Person) {
-      console.log("PERSON PUT", person)
       return this.http.put<Person>(`${baseURL}${api}/person/${person.id}`, person);
     }
     
@@ -30,5 +26,5 @@ export class PersonService {
       return this.http.delete(`${baseURL}${api}/person/${person.id}`);
     }
 
-  }
+}
     

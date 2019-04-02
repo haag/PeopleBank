@@ -7,18 +7,8 @@
 
 
       <div>
-          <ul class="people">
-            <li *ngFor="let person of people" (click)="onSelect(person)" [class.selected]="person === selectedPerson">
-              <button class="delete-button" (click)="deletePerson(person)">Delete</button>
-              <div class="person-element">
-                <div class="name">{{person.name}}</div>
-                <div class="badge">{{person.id}}</div>
-                <div class="saying">{{person.saying}}</div>
-              </div>
-            </li>
-          </ul>
+
           <div class="editarea">
-            <button (click)="enableAddMode()">Add New Person</button>
             <div *ngIf="selectedPerson">
               <div class="editfields">
                 <div>
