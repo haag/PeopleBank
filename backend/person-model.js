@@ -17,7 +17,7 @@ const personSchema = new Schema({
     email: String,
     
     //Default
-    // id: { type: Number, required: true },
+    id: { type: Number, required: true },
     living: { type: Boolean, default: true },
     updated: { type: Date, default: Date.now },
     created: { type: Date, default: Date.now },

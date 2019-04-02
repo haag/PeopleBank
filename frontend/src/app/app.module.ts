@@ -15,6 +15,8 @@ import { CreatePersonComponent } from './create-person/create-person.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
+import { PersonService } from './create-person/person.service';
+import { ViewPeopleComponent } from './view-people/view-people.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MaterialModule } from './material';
     TESTComponent,
     ContactComponent,
     CreatePersonComponent,
+    ViewPeopleComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { MaterialModule } from './material';
   entryComponents: [
     CreatePersonComponent
   ],
-  providers: [HeroService],
+  providers: [HeroService, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
