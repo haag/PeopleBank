@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material';
 export class CreatePersonComponent implements OnInit {
   name = new FormControl('', [Validators.required, Validators.email]);
   addingPerson = true;
+  editingPerson = false;
   people: any = [];
   selectedPerson: Person;
  
@@ -25,15 +26,22 @@ export class CreatePersonComponent implements OnInit {
   }
   
   cancel() {
-    // this.addingPerson = false;
-    // this.selectedPerson = null;
+    this.addingPerson = false;
+    this.selectedPerson = null;
     this.dialog.closeAll();
   }
   
-  // onSelect(person: Person) {
-  //   this.addingPerson = false;
-  //   this.selectedPerson = person;
-  // }
+  onSelect(person: Person) {
+    this.selectedPerson = person;
+  }
+
+  
+  update() {
+    this.personService.updatePerson(this.selectedPerson).subscribe(person => {
+      this.addingPerson = false;
+      this.selectedPerson = null;
+    });
+  }
 
   save() {
       this.personService.addPerson(this.selectedPerson).subscribe(person => {
@@ -44,10 +52,10 @@ export class CreatePersonComponent implements OnInit {
       });
   }
 }
- 
-    //ERROR HANDLING
-    // getErrorMessage() {
-    //   return this.name.hasError('required') ? 'You must enter a value' :
-    //       this.name.hasError('name') ? 'Not a valid name' :
-    //           '';
-    // }
+
+//ERROR HANDLING
+// getErrorMessage() {
+  //   return this.name.hasError('required') ? 'You must enter a value' :
+  //       this.name.hasError('name') ? 'Not a valid name' :
+  //           '';
+  // }

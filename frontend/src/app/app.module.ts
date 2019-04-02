@@ -10,13 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { TESTComponent } from './test/test.component';
 import { HeroService } from './test/hero.service';
-import { ContactComponent } from './contact/contact.component';
 import { CreatePersonComponent } from './create-person/create-person.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { PersonService } from './create-person/person.service';
-import { ViewPeopleComponent } from './view-people/view-people.component';
+import { EditPersonComponent } from './edit-person/edit-person.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +24,8 @@ import { ViewPeopleComponent } from './view-people/view-people.component';
     HomeComponent,
     AboutComponent,
     TESTComponent,
-    ContactComponent,
     CreatePersonComponent,
-    ViewPeopleComponent,
+    EditPersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +39,8 @@ import { ViewPeopleComponent } from './view-people/view-people.component';
 
   ],
   entryComponents: [
-    CreatePersonComponent
+    CreatePersonComponent,
+    EditPersonComponent
   ],
   providers: [HeroService, PersonService],
   bootstrap: [AppComponent]

@@ -1,57 +1,51 @@
-<p>
-  about works!
-  <button mat-button>Basic</button>
-</p>
-<p>
-  View works! o?
-  </p>
-  <div>
-      <ul class="people">
-        <li *ngFor="let person of people" (click)="onSelect(person)" [class.selected]="person === selectedPerson">
-          <button class="delete-button" (click)="deletePerson(person)">Delete</button>
-          <div class="person-element">
-            <div class="badge">{{person.id}}</div>
-            <div class="name">{{person.name}}</div>
-            <div class="saying">{{person.saying}}</div>
+
+    <div>
+        <ul class="people">
+          <li *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
+        
+
+
+            <button class="delete-button" (click)="deletePerson(person)">Delete</button>
+            <div class="person-element">
+              <div class="badge">{{person.id}}</div>
+              <div class="name">{{person.name}}</div>
+              <div class="saying">{{person.saying}}</div>
+            </div>
+          </li>
+        </ul>
+        <div class="editarea">
+          <div *ngIf="selectedPerson">
+            <div class="editfields">
+              <div>
+                <label>id: </label>
+                <input [(ngModel)]="selectedPerson.id" placeholder="id" *ngIf="addingPerson" />
+                <label *ngIf="!addingPerson" class="value">{{selectedPerson.id}}</label>
+              </div>
+              <div>
+                <label>name: </label>
+                <input [(ngModel)]="selectedPerson.name" placeholder="name" />
+              </div>
+              <div>
+                <label>saying: </label>
+                <input [(ngModel)]="selectedPerson.saying" placeholder="saying" />
+              </div>
+            </div>
+            <button (click)="cancel()">Cancel</button>
+            <button (click)="save()">Save</button>
           </div>
-        </li>
-      </ul>
-      <div class="editarea">
-        <button (click)="enableAddMode()">Add New Person</button>
-        <div *ngIf="selectedPerson">
-          <div class="editfields">
-            <div>
-              <label>id: </label>
-              <input [(ngModel)]="selectedPerson.id" placeholder="id" *ngIf="addingPerson" />
-              <label *ngIf="!addingPerson" class="value">{{selectedPerson.id}}</label>
-            </div>
-            <div>
-              <label>name: </label>
-              <input [(ngModel)]="selectedPerson.name" placeholder="name" />
-            </div>
-            <div>
-              <label>saying: </label>
-              <input [(ngModel)]="selectedPerson.saying" placeholder="saying" />
-            </div>
-          </div>
-          <button (click)="cancel()">Cancel</button>
-          <button (click)="save()">Save</button>
         </div>
       </div>
-    </div>
+      
     
 
 
-<ol>
-    <li>
+  <ol>
+    <!-- <li>
       <mat-form-field>
         <input matInput [(ngModel)]="name" placeholder="What's your name?">
       </mat-form-field>
-    </li>
+    </li> -->
     <li>
-      <button mat-raised-button (click)="openDialog()">Create New Person</button>
+      <button mat-raised-button (click)="openCreateDialog()">Create New Person</button>
     </li>
-    <li *ngIf="animal">
-      You chose: <i>{{animal}}</i>
-    </li>
-  </ol>
+</ol>
