@@ -2,13 +2,14 @@
 [x] connect to cosmodb from node
 [x] Allow multiple entries to db(resolve error)
 [x] Create-person component. Not accepting data. Connect to BE
+[x] Deploy BE
+
 
 [] set collections for DB
-[] FE input fields modal
+[] FE add additional input fields modal
 [] FE display data cards
 [] FE Show some data, click to edit
 
-[] Deploy BE
 [] Host FE
 [] Set auto increment ID
 
