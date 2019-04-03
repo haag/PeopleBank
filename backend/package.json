@@ -15,7 +15,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "server.js"
+    "start": "nodemon server.js"
   },
   "devDependencies": {},
   "keywords": [],
