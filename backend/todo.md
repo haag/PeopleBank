@@ -1,16 +1,18 @@
 [x] connect to cosmodb on compass
 [x] connect to cosmodb from node
 [x] Allow multiple entries to db(resolve error)
+[x] Create-person component. Not accepting data. Connect to BE
 
 [] set collections for DB
-[] FE input modal
+[] FE input fields modal
 [] FE display data cards
+[] FE Show some data, click to edit
+
 [] Deploy BE
 [] Host FE
 [] Set auto increment ID
 
 FE
-[] Create-person component. Not accepting data. Connect to BE
 
 Other:
 [] Tags (birthday month, relationship, )

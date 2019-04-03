@@ -17,6 +17,10 @@ server.use(morgan('combined'))
 
 
 server.use(bodyParser.urlencoded({ extended: false }))
+server.get('/', (req,res) => {
+    res.send("Get is Working!")
+    console.log("Get is working")
+})
 server.use('/api', routes)
 
 
