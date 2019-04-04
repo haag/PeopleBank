@@ -12,7 +12,7 @@
 
 [] Host FE
 [] Set auto increment ID
-
+[] Deploy with KUDO
 FE
 
 Other:
