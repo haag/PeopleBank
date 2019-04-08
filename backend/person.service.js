@@ -16,7 +16,7 @@ function getPeople(req, res) {
 }
 
 function postPerson(req, res) {
-    const originalPerson = { id: req.body.id, name: req.body.name, saying: req.body.saying };
+    const originalPerson = { id, first_name, last_name} = req.body;
     const person = new Person(originalPerson);
     person.save(error => {
       if (checkServerError(res, error)) return;

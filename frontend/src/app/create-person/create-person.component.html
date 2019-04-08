@@ -6,61 +6,85 @@
   </div> -->
 
 
-  <!-- <p>
-  View works! o?
-  </p>
-  <div>
-      <ul class="people">
-        <li *ngFor="let person of people" (click)="onSelect(person)" [class.selected]="person === selectedPerson">
-          <button class="delete-button" (click)="deletePerson(person)">Delete</button>
-          <div class="person-element">
-            <div class="badge">{{person.id}}</div>
-            <div class="name">{{person.name}}</div>
-            <div class="saying">{{person.saying}}</div>
-          </div>
-        </li>
-      </ul>
-      <div class="editarea">
-        <div *ngIf="selectedPerson">
-          <div class="editfields">
-            <div>
-              <label>id: </label>
-              <input [(ngModel)]="selectedPerson.id" placeholder="id" *ngIf="addingPerson" />
-              <label *ngIf="!addingPerson" class="value">{{selectedPerson.id}}</label>
-            </div>
-            <div>
-              <label>name: </label>
-              <input [(ngModel)]="selectedPerson.name" placeholder="name" />
-            </div>
-            <div>
-              <label>saying: </label>
-              <input [(ngModel)]="selectedPerson.saying" placeholder="saying" />
-            </div>
-          </div>
-          <button (click)="cancel()">Cancel</button>
-          <button (click)="save()">Save</button>
-        </div>
-      </div>
-    </div>
-     -->
-
       <div>
+        <h4>Create New Person</h4>
           <div class="editarea">
             <div *ngIf="selectedPerson">
               <div class="editfields">
+
                 <div>
                   <label>id: </label>
                   <input [(ngModel)]="selectedPerson.id" placeholder="id" *ngIf="addingPerson" />
                   <label *ngIf="!addingPerson" class="value">{{selectedPerson.id}}</label>
                 </div>
+
                 <div>
-                  <label>name: </label>
-                  <input [(ngModel)]="selectedPerson.name" placeholder="name" />
+                  <label>First Name: </label>
+                  <input [(ngModel)]="selectedPerson.first_name" placeholder="First name" />
+
+                  <label>Last Name: </label>
+                  <input [(ngModel)]="selectedPerson.last_name" placeholder="Last name" />
+      
+                  <label>nickname: </label>
+                  <input [(ngModel)]="selectedPerson.nickname" placeholder="nickname" />
                 </div>
+
                 <div>
-                  <label>saying: </label>
-                  <input [(ngModel)]="selectedPerson.saying" placeholder="saying" />
+                  <label>From: </label>
+                  <input [(ngModel)]="selectedPerson.from" placeholder="from" />
                 </div>
+                
+                <div>
+                  <label>Work: </label>
+                  <input [(ngModel)]="selectedPerson.work" placeholder="work" />
+                </div>
+                
+                <div>
+                  <label>School: </label>
+                  <input [(ngModel)]="selectedPerson.school" placeholder="school" />
+                </div>
+                
+                <div>
+                  <label>myRelationship: </label>
+                  <input [(ngModel)]="selectedPerson.my_relationship" placeholder="myRelationship" />
+
+                  <label>Acquaintance Level: </label>
+                  <input [(ngModel)]="selectedPerson.relationship_depth" placeholder="Depth 1-10" />
+                </div>
+                
+                <div>
+                  <label>weMet: </label>
+                  <input [(ngModel)]="selectedPerson.we_met" placeholder="weMet" />
+                </div>
+                
+                <div>
+                  <label>Birthdate: </label>
+                  <input [(ngModel)]="selectedPerson.birthday" placeholder="birthday" />
+                </div>
+                
+                <div>
+                  <label>Siblings: </label>
+                  <input [(ngModel)]="selectedPerson.siblings" placeholder="siblings +Sib?" />
+
+                  <label>Family Position: </label>
+                  <input [(ngModel)]="selectedPerson.birthOrder" placeholder="Which number" />
+                    
+                  <label>Children: </label>
+                  <input [(ngModel)]="selectedPerson.children" placeholder="Num children +Child?" />
+                </div>
+                
+                
+                <div>
+                  <label>Phone: </label>
+                  <input [(ngModel)]="selectedPerson.phone" placeholder="phone" />
+
+                  <label>Email: </label>
+                  <input [(ngModel)]="selectedPerson.email" placeholder="email" />
+
+                  <label>Other contact: </label>
+                  <input [(ngModel)]="selectedPerson.contact" placeholder="oth contat" />
+                </div>
+
               </div>
               <button (click)="cancel()">Cancel</button>
               <button (click)="save()">Save</button>

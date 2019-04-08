@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { Person } from './person';
 
 const api = '/api';
-const baseURL = 'http://localhost:4000';
+//PRODUCTION
+// const baseURL = "https://pplbe.azurewebsites.net/";
+
+//DEV
+const baseURL = "http://localhost:4000";
+
 
 @Injectable()
 export class PersonService {
@@ -25,6 +29,5 @@ export class PersonService {
     deletePerson(person: Person) {
       return this.http.delete(`${baseURL}${api}/person/${person.id}`);
     }
-
 }
     

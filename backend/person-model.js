@@ -3,18 +3,22 @@ const Schema = mongoose.Schema
 
 const personSchema = new Schema({
     //About
-    name: String,
+    first_name: String,
+    last_name: String,
     nickname: String,
     from: String,
     work: String,
     school: String,
-    myRelationship: String,
-    weMet: String,
-    birthdate: Number,
+    my_relationship: String,
+    we_met: String,
+    relationship_depth: String,
+    birthdate: String,
     siblings: Number,
-    birthOrder: Number,
+    children: Number,
+    family_position: Number,
     phone: Number,
     email: String,
+    contact: String,
     
     //Default
     id: { type: Number, required: true },
