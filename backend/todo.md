@@ -10,6 +10,7 @@
 [] FE display data cards
 [] FE Show some data, click to edit
 
+[] Import contacts
 [] Host FE
 [] Set auto increment ID
 [] Deploy with KUDO

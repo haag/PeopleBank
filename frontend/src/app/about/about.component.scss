@@ -1,0 +1,10 @@
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.person-card {
+    max-width: 150px;
+    height: 200px;
+}

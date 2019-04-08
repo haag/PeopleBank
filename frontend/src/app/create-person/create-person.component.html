@@ -6,7 +6,7 @@
   </div> -->
 
 
-      <div>
+      <div class ="create-container" *ngIf="!post; else forminfo" novalidate>
         <h4>Create New Person</h4>
           <div class="editarea">
             <div *ngIf="selectedPerson">
