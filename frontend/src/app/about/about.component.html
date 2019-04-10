@@ -4,16 +4,15 @@
         <div class="card" *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
           
           <button class="delete-button" (click)="deletePerson(person)">Delete</button>
+           
             <mat-card class="person-card">
-                <mat-card-header>
-                  <mat-card-title>{{person.first_name}}</mat-card-title>
-                  <mat-card-title>{{person.last_name}}</mat-card-title>
+                <mat-card-header class="person-header" >
+                  <mat-card-title>{{ person.first_name }}</mat-card-title>
+                  <mat-card-title>{{ person.last_name }}</mat-card-title>
                   <mat-card-subtitle>Dog Breed</mat-card-subtitle>
                   <mat-card-content>
                       <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                        bred for hunting.
+                        Tags go here
                       </p>
                     </mat-card-content>
               </mat-card-header>

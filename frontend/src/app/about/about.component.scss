@@ -7,4 +7,19 @@
 .person-card {
     max-width: 150px;
     height: 200px;
+    overflow: hidden;
+    
+    .person-header {
+        flex-direction: column;   
+    }
 }
+
+
+.create-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-container > * {
+    width: 100%;
+  }

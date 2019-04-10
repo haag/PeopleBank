@@ -4,10 +4,10 @@ import { Person } from './person';
 
 const api = '/api';
 //PRODUCTION
-// const baseURL = "https://pplbe.azurewebsites.net/";
+const baseURL = "https://pplbe.azurewebsites.net/";
 
 //DEV
-const baseURL = "http://localhost:4000";
+// const baseURL = "http://localhost:4000";
 
 
 @Injectable()
