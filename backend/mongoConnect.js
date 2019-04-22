@@ -6,16 +6,32 @@ function connect() {
     mongoose.set('debug', true);
     return mongoose.connect(process.env.COSMOSDB_CONNSTR+"?ssl=true&replicaSet=globaldb", 
     { 
-        useCreateIndex: true, 
+        // useCreateIndex: true, 
         useNewUrlParser: true, 
         auth: {
               user: process.env.COSMODDB_USER,
-              password: process.env.COSMOSDB_PASSWORD
+              password: process.env.COSMOSDB_PRIMARY_PASSWORD
             }        
     })
         .then(() => console.log('Connection to CosmosDB successful'))
-        .catch((err) => console.error(err));
+        .catch((err) => console.error("Connection UNSUCCESSFUL", err));
 }
+
+//MSI CONNECTION
+// function connect() {
+//     mongoose.set('debug', true);
+//     return mongoose.connect(process.env.MSI_COSMOSDB_CONNSTR, 
+//     { 
+//         // useCreateIndex: true, 
+//         useNewUrlParser: true, 
+//         auth: {
+//               user: process.env.MSI_COSMODDB_USER,
+//               password: process.env.MSI_COSMOSDB_PASSWORD
+//             }        
+//     })
+//         .then(() => console.log('Connection to MSI Cosmos successful'))
+//         .catch((err) => console.error("Connection to MSI Cosmos UNSUCCESSFUL", err));
+// }
 
 
 module.exports = {

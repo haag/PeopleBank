@@ -32,3 +32,47 @@
       <button mat-raised-button (click)="openCreateDialog()">Create New Person</button>
     </li>
 </ol>
+
+
+<div ng-controller="AppCtrl" ng-cloak>
+    <mat-card-content class="mat-padding" layout-xs="column" layout="row">
+      <div flex-xs flex-gt-xs="30" layout="column">
+
+
+        <mat-card>
+            
+          <mat-icon>mood</mat-icon>
+
+          <img mat-card-image src="{{imagePath}}" class="mat-card-image" alt="Washed Out">
+          <mat-card-title>
+            <mat-card-title>
+              <span class="mat-headline">In-card mixed actions</span>
+            </mat-card-title>
+          </mat-card-title>
+          <mat-card-actions layout="row" layout-align="start center">
+            <mat-icon>
+              <button mat-button class="mat-icon-button" aria-label="Favorite">
+                    <mat-icon >favorite_border</mat-icon>
+              </button>
+              <button mat-button class="mat-icon-button" aria-label="Share">
+                    <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-button class="mat-icon-button" aria-label="Share">
+                    <mat-icon svgIcon="thumbs-up"></mat-icon>
+              </button>
+            </mat-icon>
+            <button mat-button>Action 1</button>
+            <button mat-button>Action 2</button>
+          </mat-card-actions>
+          <mat-card-content>
+            <p>
+              The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+              two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+            </p>
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>
+    </mat-card-content>
+  </div>

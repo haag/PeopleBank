@@ -28,8 +28,6 @@ export class CreatePersonComponent implements OnInit {
     private formBuilder: FormBuilder) {}
   
   ngOnInit() {
-    // this.createForm();
-    // this.setChangeValidate()
     this.selectedPerson = new Person();
   }
   
@@ -42,42 +40,10 @@ export class CreatePersonComponent implements OnInit {
             '';
   }
 
-  // createForm() {
-  //   let emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  //   this.formGroup = this.formBuilder.group({
-  //     'email': [null, Validators.pattern(emailregex)],
-  //     'name': [null, Validators.required],
-  //     // 'first_name': [null, Validators.required],
-  //     'description': [null, [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
-  //     'validate': ''
-  //   });
-  // }
-
-  // setChangeValidate() {
-  //   this.formGroup.get('validate').valueChanges.subscribe(
-  //     (validate) => {
-  //       if (validate == '1') {
-  //         this.formGroup.get('name').setValidators([Validators.required, Validators.minLength(3)]);
-  //         this.titleAlert = "You need to specify at least 3 characters";
-  //       } else {
-  //         this.formGroup.get('name').setValidators(Validators.required);
-  //       }
-  //       this.formGroup.get('name').updateValueAndValidity();
-  //     }
-  //   )
-  // }
-
-  // getErrorEmail() {
-  //   return this.formGroup.get('email').hasError('required') ? 'Field is required' :
-  //     this.formGroup.get('email').hasError('pattern') ? 'Not a valid emailaddress' :
-  //       this.formGroup.get('email').hasError('alreadyInUse') ? 'This emailaddress is already in use' : '';
-  // }
 
 
 
 
-
-  
 
   cancel() {
     this.addingPerson = false;
