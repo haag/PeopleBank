@@ -18,12 +18,12 @@ export class AboutComponent implements OnInit {
   constructor(private personService: PersonService, public dialog: MatDialog) { }
 
   name = new FormControl('', [Validators.required, Validators.email]);
-  
+
   addingPerson = false;
   people: any = [];
   selectedPerson: Person;
-  
-  
+
+
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CreatePersonComponent, { });
 
@@ -33,12 +33,12 @@ export class AboutComponent implements OnInit {
   };
 
   openEditDialog(prop) {
-  
+
     const dialogRef = this.dialog.open(EditPersonComponent);
 
-    let instance = dialogRef.componentInstance;
+    const instance = dialogRef.componentInstance;
     instance.person = prop;
-    
+
     console.log('dialogRef', dialogRef);
 
     dialogRef.afterClosed().subscribe(result => {

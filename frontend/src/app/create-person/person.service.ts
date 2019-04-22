@@ -17,17 +17,18 @@ export class PersonService {
     getPeople() {
       return this.http.get<Array<Person>>(`${baseURL}${api}/people`);
     }
-  
+
     addPerson(person: Person) {
       return this.http.post<Person>(`${baseURL}${api}/person`, person);
     }
-    
+
     updatePerson(person: Person) {
+      console.log('person ID:', person);
       return this.http.put<Person>(`${baseURL}${api}/person/${person.id}`, person);
     }
-    
+
     deletePerson(person: Person) {
       return this.http.delete(`${baseURL}${api}/person/${person.id}`);
     }
 }
-    
+

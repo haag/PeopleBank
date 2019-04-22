@@ -17,6 +17,7 @@ function getPeople(req, res) {
 
 function postPerson(req, res) {
     const originalPerson = { id, first_name, last_name} = req.body;
+    console.log('originalPerson:', originalPerson)
     const person = new Person(originalPerson);
     person.save(error => {
       if (checkServerError(res, error)) return;
@@ -26,17 +27,28 @@ function postPerson(req, res) {
   }
   
   function putPerson(req, res) {
-    const originalPerson = {
-      id: parseInt(req.params.id, 10),
-      name: req.body.name,
-      saying: req.body.saying
-    };
-    Person.findOne({ id: originalPerson.id }, (error, person) => {
+    const id = parseInt(req.params.id, 10)
+    const originalPerson = { firstName, lastName, nickname, from, work, school, myRelationship, weMet, relationshipDepth, birthdate, siblings, children, familyPosition, phone, email, contact, } = req.body;
+    Person.findOne({ id: id}, (error, person) => {
       if (checkServerError(res, error)) return;
       if (!checkFound(res, person)) return;
   
-      person.name = originalPerson.name;
-      person.saying = originalPerson.saying;
+          person.firstName = originalPerson.firstName;
+          person.lastName = originalPerson.lastName;
+          person.nickname = originalPerson.nickname;
+          person.from = originalPerson.from;
+          person.work = originalPerson.work;
+          person.school = originalPerson.school;
+          person.myRelationship = originalPerson.myRelationship;
+          person.weMet = originalPerson.weMet;
+          person.relationshipDepth = originalPerson.relationshipDepth;
+          person.birthdate = originalPerson.birthdate;
+          person.siblings = originalPerson.siblings;
+          person.children = originalPerson.children;
+          person.familyPosition = originalPerson.familyPosition;
+          person.phone = originalPerson.phone;
+          person.email = originalPerson.email;
+          person.contact = originalPerson.contact;
       person.save(error => {
         if (checkServerError(res, error)) return;
         res.status(200).json(person);

@@ -10,84 +10,84 @@
            -->
           </div>
           <mat-form-field>
-              <input matInput [(ngModel)]="selectedPerson.first_name" placeholder="First name" >
+              <input matInput [(ngModel)]="selectedPerson.firstName" placeholder="First name" >
           </mat-form-field>
-  
+
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.last_name" placeholder="Last name" />
+            <input matInput [(ngModel)]="selectedPerson.lastName" placeholder="Last name" />
           </mat-form-field>
-          
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.nickname" placeholder="Nickname" />
           </mat-form-field>
-  
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.from" placeholder="From" />
           </mat-form-field>
-          
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.work" placeholder="Work" />
           </mat-form-field>
-          
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.school" placeholder="School" />
           </mat-form-field>
-          
+
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.my_relationship" placeholder="myRelationship" />
+            <input matInput [(ngModel)]="selectedPerson.myRelationship" placeholder="myRelationship" />
           </mat-form-field>
-          
+
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.relationship_depth" placeholder="Acquaintance Level 1-10" />
+            <input matInput [(ngModel)]="selectedPerson.relationshipDepth" placeholder="Acquaintance Level 1-10" />
           </mat-form-field>
-          
+
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.we_met" placeholder="weMet" />
+            <input matInput [(ngModel)]="selectedPerson.weMet" placeholder="weMet" />
           </mat-form-field>
-          
+
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.birthday" placeholder="Birthday" />
+            <input matInput [(ngModel)]="selectedPerson.birthdate" placeholder="Birthday" />
           </mat-form-field>
-          
+
           <mat-form-field >
             <input matInput [(ngModel)]="selectedPerson.siblings" placeholder="Siblings +Sib?" />
           </mat-form-field>
-          
+
           <mat-form-field>
-              <mat-select [(ngModel)]="selectedPerson.birthOrder" placeholder="Family Position">
-                <mat-option value="option">1</mat-option>
-                <mat-option value="option">2</mat-option>
-                <mat-option value="option">3</mat-option>
-                <mat-option value="option">4</mat-option>
-                <mat-option value="option">5</mat-option>
-                <mat-option value="option">6</mat-option>
-                <mat-option value="option">7</mat-option>
-                <mat-option value="option">8</mat-option>
-                <mat-option value="option">9</mat-option>
-                <mat-option value="option">10</mat-option>
+              <mat-select [(ngModel)]="selectedPerson.familyPosition" placeholder="Family Position">
+                <mat-option value="option1">1</mat-option>
+                <mat-option value="option2">2</mat-option>
+                <mat-option value="option3">3</mat-option>
+                <mat-option value="option4">4</mat-option>
+                <mat-option value="option5">5</mat-option>
+                <mat-option value="option6">6</mat-option>
+                <mat-option value="option7">7</mat-option>
+                <mat-option value="option8">8</mat-option>
+                <mat-option value="option9">9</mat-option>
+                <mat-option value="option10">10</mat-option>
               </mat-select>
             </mat-form-field>
-  <!-- 
+  <!--
   THIS IS WIRED BUT HTE ONE ABOVE IS NOT
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.birthOrder" placeholder="Family Position" />
+            <input matInput [(ngModel)]="selectedPerson.familyPosition" placeholder="Family Position" />
           </mat-form-field> -->
-  
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.children" placeholder="Num children +Child?" />
           </mat-form-field>
-          
-          
+
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.phone" placeholder="Phone" />
           </mat-form-field>
-          
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.email" placeholder="Email" [formControl]="email"  />
-            
+
             <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
           </mat-form-field>
-          
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.contact" placeholder="Other contat" />
           </mat-form-field>
@@ -99,6 +99,6 @@
       </div>
     </div>
 </div>
-    
+
 
 

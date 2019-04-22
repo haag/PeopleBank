@@ -3,20 +3,20 @@ const Schema = mongoose.Schema
 
 const personSchema = new Schema({
     //About
-    first_name: String,
-    last_name: String,
+    firstName: String,
+    lastName: String,
     nickname: String,
     from: String,
     work: String,
     school: String,
-    my_relationship: String,
-    we_met: String,
-    relationship_depth: String,
+    myRelationship: String,
+    weMet: String,
+    relationshipDepth: String,
     birthdate: String,
     siblings: String,
     children: String,
-    family_position: Number,
-    phone: Number,
+    familyPosition: String,
+    phone: String,
     email: String,
     contact: String,
     

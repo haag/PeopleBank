@@ -3,7 +3,7 @@ const router = express.Router()
 
 const personService = require('./person.service')
 
-router.get('/people', (req, res) => {
+  router.get('/people', (req, res) => {
     personService.getPeople(req, res);
   });
   
