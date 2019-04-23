@@ -52,3 +52,31 @@
 //   width: 100%;
 // }
 
+.show{
+	display: block;
+	bottom: 0;
+	visibility: visible;
+	position: relative;
+	transition: all 1s ease-in-out;
+		height: auto;
+		z-index: 0;
+
+
+}
+.hide{
+	display: block;
+	visibility: hidden;
+	position: relative;
+	height: 0 !important;
+	bottom: -1000px;	
+	z-index: -10;
+	transition: all 1s ease-in-out;
+}
+
+.view-toggle{
+  float: right;
+  i{
+    font-size: 28px;
+    cursor: pointer;
+  }
+}

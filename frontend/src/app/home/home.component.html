@@ -1,34 +1,49 @@
 
-    <div class="cards-container">
-        <div class="card" *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
-            <mat-card class="person-card">
-                <mat-card-header class="person-header" >
-                    <!-- <img mat-card-image src="{{imagePath}}" class="mat-card-image" alt="Washed Out"> -->
-                    <mat-card-content class="person-firstname">{{ person.firstName }}</mat-card-content>
-                    <mat-card-content class="person-lastname">{{ person.lastName }}</mat-card-content>
-                    <!-- <mat-card-subtitle>Relationship?</mat-card-subtitle> -->
-                </mat-card-header>
-
-                <mat-card-header class="person-center">
-                    <mat-icon>
-                        <button mat-button class="mat-icon-button" aria-label="Favorite">
-                            <mat-icon >favorite_border</mat-icon>
-                        </button>
-                        <button mat-button class="mat-icon-button" aria-label="Share">
-                            <mat-icon>favorite</mat-icon>
-                        </button>
-                    </mat-icon>
-                </mat-card-header>
-
-                <mat-card-header class="person-footer">
-                    <mat-card-actions class="action-buttons">
-                        <button mat-button>Share</button>
-                        <button mat-button>Download</button>
-                    </mat-card-actions>
-
-                </mat-card-header>
-          </mat-card>
+			<div class="view-toggle">
+                    <i (click)="cardViewClick()" class="material-icons">view_module</i>
+                    <i (click)="listViewClick()" class="material-icons">view_headline</i>
+                </div>
+    <div class="display-container">
+        <div class="cards-container" [ngClass]="cardView ? 'show' : 'hide'">
+            <div class="card" *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
+                <mat-card class="person-card">
+                    <mat-card-header class="person-header" >
+                        <!-- <img mat-card-image src="{{imagePath}}" class="mat-card-image" alt="Washed Out"> -->
+                        <mat-card-content class="person-firstname">{{ person.firstName }}</mat-card-content>
+                        <mat-card-content class="person-lastname">{{ person.lastName }}</mat-card-content>
+                        <!-- <mat-card-subtitle>Relationship?</mat-card-subtitle> -->
+                    </mat-card-header>
+                    
+                    <mat-card-header class="person-center">
+                        <mat-icon>
+                            <button mat-button class="mat-icon-button" aria-label="Favorite">
+                                <mat-icon >favorite_border</mat-icon>
+                            </button>
+                            <button mat-button class="mat-icon-button" aria-label="Share">
+                                <mat-icon>favorite</mat-icon>
+                            </button>
+                        </mat-icon>
+                    </mat-card-header>
+                    
+                    <mat-card-header class="person-footer">
+                        <mat-card-actions class="action-buttons">
+                            <button mat-button>Share</button>
+                            <button mat-button>Download</button>
+                        </mat-card-actions>
+                        
+                    </mat-card-header>
+                </mat-card>
+            </div>
         </div>
 
+        <div class="table-container" [ngClass]="listView ? 'show' : 'hide'">
+            <div class="card" >
+
+                <mat-list role="list" *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
+                    <mat-list-item role="listitem">{{ person.firstName }} {{ person.lastName }}</mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+            </div>
+        </div>
 
     </div>

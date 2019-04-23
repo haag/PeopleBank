@@ -23,6 +23,9 @@ export class HomeComponent implements OnInit {
   people: any = [];
   selectedPerson: Person;
 
+  //To Toggle View
+  cardView = true;
+  listView = false;
 
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CreatePersonComponent, { });
@@ -97,5 +100,24 @@ save() {
     });
   }
 }
+
+//Toggle
+
+cardViewClick() {
+  this.cardView = true;
+  this.listView = false;
+  console.log("Clicked Card and listView is:", this.listView, " And cardview is: ", this.cardView)
+}
+listViewClick() {
+  this.cardView = false;
+  this.listView = true;
+  console.log("Clicked List and cardview is: ", this.cardView, " And listview is: ", this.listView)
+
+}
+
+
+
+
+
 }
 

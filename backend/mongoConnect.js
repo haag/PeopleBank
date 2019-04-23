@@ -20,7 +20,7 @@ mongoose.Promise = global.Promise
 //MSI CONNECTION
 function connect() {
     mongoose.set('debug', true);
-    console.log('process.env.MSI_COSMOSDB_CONNSTR:', process.env.MSI_COSMOSDB_CONNSTR)
+    // console.log('process.env.MSI_COSMOSDB_CONNSTR:', process.env.MSI_COSMOSDB_CONNSTR)
     return mongoose.connect(process.env.MSI_COSMOSDB_CONNSTR, 
     { 
         // useCreateIndex: true, 
