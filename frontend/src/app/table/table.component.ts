@@ -1,21 +1,44 @@
 import {Component, OnInit, ViewChild, Input } from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
+//Gathering Data from DB
+import { PersonService } from '../create-person/person.service';
+
+// export interface UserData {
+//   id: string;
+//   firstName: string;
+//   progress: string;
+//   color: string;
+// }
+export interface Person {
+  id: number;
+  firstName: string;
+  lastName: string;
+  nickname: string;
+  from: string;
+  work: string;
+  school: string;
+  myRelationship: string;
+  relationshipDepth: string;
+  weMet: string;
+  birthdate: string;
+  siblings: string;
+  familyPosition: string;
+  children: string;
+  phone: string;
+  email: string;
+  contact: string;
+
 }
 
-/** Constants used to fill up our data base. */
-const COLORS: string[] = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES: string[] = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+const PEOPLE: any[] = [
+  { id: 1, name: "Tom", progress: 50, color: "Green" },
+  { id: 2, name: "Tom1", progress: 40, color: "blue" },
+  { id: 3, name: "Tom2", progress: 30, color: "Green" },
+  { id: 4, name: "Tom3", progress: 20, color: "orange" },
+  { id: 5, name: "Tom4", progress: 10, color: "Green", tree: "YES" }
+]
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -33,29 +56,26 @@ const NAMES: string[] = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
   ],
 })
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
-
-
-  dataSources = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
-  expandedElement: PeriodicElement | null;
-
+  //FIX THE ASYNC ISSUE FOR TOMORROW
+  constructor(private personService: PersonService) {
+    // Assign the data to the data source for the table to render
+    this.personService.getPeople().subscribe(people => { this.people = people })
+    this.dataSource = new MatTableDataSource(this.people);
+  }
+  
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
-  constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
-  }
+  
+  displayedColumns: string[] = ['id', 'firstName', 'progress', 'color', "tree"];
+  dataSource: MatTableDataSource<Person>;
+  people: any = [];
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -66,51 +86,3 @@ export class TableComponent implements OnInit {
   }
 }
 
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  description: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 1,
-    name: 'Hydrogen',
-    weight: 1.0079,
-    symbol: 'H',
-    description: `Hydrogen is a chemical element with symbol H and atomic number 1. With a standard
-        atomic weight of 1.008, hydrogen is the lightest element on the periodic table.`
-  }, {
-    position: 2,
-    name: 'Helium',
-    weight: 4.0026,
-    symbol: 'He',
-    description: `Helium is a chemical element with symbol He and atomic number 2. It is a
-        colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas
-        group in the periodic table. Its boiling point is the lowest among all the elements.`
-  }, {
-    position: 3,
-    name: 'Lithium',
-    weight: 6.941,
-    symbol: 'Li',
-    description: `Lithium is a chemical element with symbol Li and atomic number 3. It is a soft,
-        silvery-white alkali metal. Under standard conditions, it is the lightest metal and the
-        lightest solid element.`
-  }]
-
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
-}
