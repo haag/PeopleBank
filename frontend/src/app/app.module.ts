@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { PersonService } from './create-person/person.service';
 import { EditPersonComponent } from './edit-person/edit-person.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
     TESTComponent,
     CreatePersonComponent,
     EditPersonComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
   ],
   entryComponents: [
     CreatePersonComponent,
-    EditPersonComponent
+    EditPersonComponent,
+    TableComponent
   ],
   providers: [HeroService, PersonService],
   bootstrap: [AppComponent]

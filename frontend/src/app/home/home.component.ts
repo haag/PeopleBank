@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { CreatePersonComponent } from '../create-person/create-person.component';
@@ -7,6 +7,7 @@ import { EditPersonComponent } from '../edit-person/edit-person.component'
 import { Person } from '../create-person/person';
 import { PersonService } from '../create-person/person.service';
 // import {FormControl, Validators} from '@angular/forms';
+// import { TableComponent } from '../table/table.component'
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ import { PersonService } from '../create-person/person.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+ 
+  // @ViewChild(TableComponent) tableComponent: TableComponent;
 
   constructor(private personService: PersonService, public dialog: MatDialog) { }
 

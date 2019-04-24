@@ -5,14 +5,15 @@
 [x] Deploy BE
 [x] set collections for DB
 [x] FE add additional input fields modal
+[x] Edit similar to create
 
 [] Accept image upload to DB
+[] Upload audio clip
 [] FE display data cards
 [] FE Show some data, click to edit
 [] "+" to add more entries in create
 [] Button to hide/show entries
 [] Delete button on edit
-[] Edit similar to create
 [] Add mission to list
 [] Auto calc age 
 
