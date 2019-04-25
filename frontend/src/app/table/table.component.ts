@@ -5,12 +5,6 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 //Gathering Data from DB
 import { PersonService } from '../create-person/person.service';
 
-// export interface UserData {
-//   id: string;
-//   firstName: string;
-//   progress: string;
-//   color: string;
-// }
 export interface Person {
   id: number;
   firstName: string;
@@ -55,27 +49,29 @@ const PEOPLE: any[] = [
     ]),
   ],
 })
+
 export class TableComponent implements OnInit {
-  //FIX THE ASYNC ISSUE FOR TOMORROW
-  constructor(private personService: PersonService) {
-    // Assign the data to the data source for the table to render
-    this.personService.getPeople().subscribe(people => { this.people = people })
-    this.dataSource = new MatTableDataSource(this.people);
-  }
+  constructor(private personService: PersonService) {  }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
   displayedColumns: string[] = ['id', 'firstName', 'progress', 'color', "tree"];
   dataSource: MatTableDataSource<Person>;
-  people: any = [];
 
+  // people: any = [];
+  
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    //Makes a call to retrieve the ppl data
+    this.personService.getPeople().subscribe(people => { 
+      //Sets Datasource with the retrieved data
+      this.dataSource = new MatTableDataSource(people);
+      
+      // Assign the data to the data source for the table to render
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
   }
-
-
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

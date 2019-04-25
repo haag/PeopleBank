@@ -17,6 +17,7 @@ import { MaterialModule } from './material';
 import { PersonService } from './create-person/person.service';
 import { EditPersonComponent } from './edit-person/edit-person.component';
 import { TableComponent } from './table/table.component';
+import { CardsComponent } from './cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TableComponent } from './table/table.component';
     CreatePersonComponent,
     EditPersonComponent,
     TableComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
