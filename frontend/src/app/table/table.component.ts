@@ -1,39 +1,14 @@
-import {Component, OnInit, ViewChild, Input } from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 //Gathering Data from DB
 import { PersonService } from '../create-person/person.service';
+import { Person } from '../create-person/person';
+import { DataSource } from '@angular/cdk/table';
 
-export interface Person {
-  id: number;
-  firstName: string;
-  lastName: string;
-  nickname: string;
-  from: string;
-  work: string;
-  school: string;
-  myRelationship: string;
-  relationshipDepth: string;
-  weMet: string;
-  birthdate: string;
-  siblings: string;
-  familyPosition: string;
-  children: string;
-  phone: string;
-  email: string;
-  contact: string;
 
-}
-
-const PEOPLE: any[] = [
-  { id: 1, name: "Tom", progress: 50, color: "Green" },
-  { id: 2, name: "Tom1", progress: 40, color: "blue" },
-  { id: 3, name: "Tom2", progress: 30, color: "Green" },
-  { id: 4, name: "Tom3", progress: 20, color: "orange" },
-  { id: 5, name: "Tom4", progress: 10, color: "Green", tree: "YES" }
-]
-
+// const myDescription = if firstName {{firstName}} was born in {{from}}. Born on {{birthdate}} and is {{}} years old. 
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -45,12 +20,14 @@ const PEOPLE: any[] = [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0', display: 'none'})),
       state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+      transition('expanded <=> collapsed', animate('150ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
 
 export class TableComponent implements OnInit {
+  x = ""
+  
   constructor(private personService: PersonService) {  }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -58,19 +35,41 @@ export class TableComponent implements OnInit {
   
   displayedColumns: string[] = ['id', 'firstName', 'progress', 'color', "tree"];
   dataSource: MatTableDataSource<Person>;
-
-  // people: any = [];
-  
   ngOnInit() {
     //Makes a call to retrieve the ppl data
     this.personService.getPeople().subscribe(people => { 
       //Sets Datasource with the retrieved data
       this.dataSource = new MatTableDataSource(people);
-      
+  
       // Assign the data to the data source for the table to render
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
+  }
+  
+
+  createPersonSummary(data) {
+    const summary = `Summary: 
+      ${data.firstName} ${data.lastName ? data.lastName : ''} 
+      ${data.nickname ? `goes by ${data.nickname},` : ''}
+      ${data.from ? `comes from ${data.from},`: ''}
+      ${data.lives ? `lives in ${data.lives},` : ''}
+      ${data.work ? `works at ${data.work},` : ''}
+      ${data.school ? `attended ${data.school},` : ''}
+      ${data.weMet ? `we met at/on ${data.weMet},` : ''}
+      ${data.myRelationship ? `we are ${data.myRelationshp},` : ''}
+      ${data.relationshipDepth ? `with a depth of ${data.relationshipDepth},` : ''}
+      ${data.birthdate ? `born on ${data.birthdate},` : ''}
+      ${data.siblings ? `${data.siblings} siblings,` : ''}
+      ${data.familyPosition ? `and is the ${data.familyPosition} child,` : ''}
+      ${data.children ? `has ${data.children} children,` : ''}
+      ${data.phone ? `PHONE` : ''}
+      ${data.email ? `EMAIL` : ''}
+      ${data.contact ? `CONTACT` : ''}
+      ${data.mission ? `served in ${data.mission},` : ''}
+      ${data.description ? `DESC` : ''}
+    `
+    this.x = summary
   }
 
   applyFilter(filterValue: string) {
@@ -80,5 +79,6 @@ export class TableComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
 }
 

@@ -6,11 +6,11 @@
 [x] set collections for DB
 [x] FE add additional input fields modal
 [x] Edit similar to create
+[x] FE display data cards
+[x] FE Show some data, click to edit
 
 [] Accept image upload to DB
 [] Upload audio clip
-[] FE display data cards
-[] FE Show some data, click to edit
 [] "+" to add more entries in create
 [] Button to hide/show entries
 [] Delete button on edit
@@ -27,5 +27,5 @@ Other:
 [] Tags (birthday month, relationship, )
 [] Search functionality
 [] View tiles / View table options
-[] Create an automated summary
+[x] Create an automated summary
 [] Create custom form with only options you want
