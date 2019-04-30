@@ -8,11 +8,14 @@
 [x] Edit similar to create
 [x] FE display data cards
 [x] FE Show some data, click to edit
+[x] Create an automated summary
 
 [] Accept image upload to DB
 [] Upload audio clip
-[] "+" to add more entries in create
+[] Add edit button to table
+[i] "+" to add more entries in create
 [] Button to hide/show entries
+[] Side nav
 [] Delete button on edit
 [] Add mission to list
 [] Auto calc age 
@@ -27,5 +30,4 @@ Other:
 [] Tags (birthday month, relationship, )
 [] Search functionality
 [] View tiles / View table options
-[x] Create an automated summary
 [] Create custom form with only options you want

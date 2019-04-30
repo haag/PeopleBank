@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+@Output() voted = new EventEmitter();
+
+toParent(){
+  console.log("Step 1")
+  this.voted.emit(true)
+}
   constructor() {}
 
   ngOnInit() {

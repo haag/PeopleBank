@@ -18,6 +18,7 @@ import { PersonService } from './create-person/person.service';
 import { EditPersonComponent } from './edit-person/edit-person.component';
 import { TableComponent } from './table/table.component';
 import { CardsComponent } from './cards/cards.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CardsComponent } from './cards/cards.component';
     EditPersonComponent,
     TableComponent,
     CardsComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

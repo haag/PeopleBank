@@ -5,10 +5,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 //Gathering Data from DB
 import { PersonService } from '../create-person/person.service';
 import { Person } from '../create-person/person';
-import { DataSource } from '@angular/cdk/table';
 
 
-// const myDescription = if firstName {{firstName}} was born in {{from}}. Born on {{birthdate}} and is {{}} years old. 
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -33,7 +31,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
-  displayedColumns: string[] = ['id', 'firstName', 'progress', 'color', "tree"];
+  displayedColumns: string[] = ['id', `firstName`, 'lastName', 'color', "tree"];
   dataSource: MatTableDataSource<Person>;
   ngOnInit() {
     //Makes a call to retrieve the ppl data

@@ -1,19 +1,23 @@
 
 <!-- <app-cards></app-cards> -->
             <app-table></app-table>
-            <div class="view-toggle">
+
+            
+            <!-- <div class="view-toggle">
                     <i (click)="cardViewClick()" class="material-icons">view_module</i>
                     <i (click)="listViewClick()" class="material-icons">view_headline</i>
-                </div>
-    <div class="display-container">
+                </div> -->
+
+
+    <!-- <div class="display-container">
         <div class="cards-container" [ngClass]="cardView ? 'show' : 'hide'">
             <div class="card" *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
                 <mat-card class="person-card">
                     <mat-card-header class="person-header" >
-                        <!-- <img mat-card-image src="{{imagePath}}" class="mat-card-image" alt="Washed Out"> -->
+                        <img mat-card-image src="{{imagePath}}" class="mat-card-image" alt="Washed Out">
                         <mat-card-content class="person-firstname">{{ person.firstName }}</mat-card-content>
                         <mat-card-content class="person-lastname">{{ person.lastName }}</mat-card-content>
-                        <!-- <mat-card-subtitle>Relationship?</mat-card-subtitle> -->
+                        <mat-card-subtitle>Relationship?</mat-card-subtitle>
                     </mat-card-header>
                     
                     <mat-card-header class="person-center">
@@ -36,9 +40,9 @@
                     </mat-card-header>
                 </mat-card>
             </div>
-        </div>
+        </div> -->
 
-        <div class="table-container" [ngClass]="listView ? 'show' : 'hide'">
+        <!-- <div class="table-container" [ngClass]="listView ? 'show' : 'hide'">
             <div class="card" >
 
                 <mat-list role="list" *ngFor="let person of people" (click)="openEditDialog(person)" [class.selected]="person === selectedPerson">
@@ -46,4 +50,4 @@
                     <mat-divider></mat-divider>
                 </mat-list>
             </div>
-        </div>
+        </div> -->
