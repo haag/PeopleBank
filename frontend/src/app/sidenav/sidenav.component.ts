@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
+import { SidenavService } from './sidenav.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   showFiller = false;
 
-  clickedParent(p){
-    console.log("In PARENT", p)
-  }
-  constructor() { }
+  @ViewChild('sidenav') public sidenav: MatSidenav;
 
-  ngOnInit() {
-  }
+	constructor(private sidenavService: SidenavService) {	}
+
+	ngOnInit(): void {
+		this.sidenavService.setSidenav(this.sidenav);
+	}
 
 }

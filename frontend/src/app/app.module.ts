@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
+import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { TESTComponent } from './test/test.component';
@@ -19,11 +19,12 @@ import { EditPersonComponent } from './edit-person/edit-person.component';
 import { TableComponent } from './table/table.component';
 import { CardsComponent } from './cards/cards.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { SidenavService } from './sidenav/sidenav.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
+    HeaderComponent,
     HomeComponent,
     AboutComponent,
     TESTComponent,
@@ -49,7 +50,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     EditPersonComponent,
     TableComponent
   ],
-  providers: [HeroService, PersonService],
+  providers: [HeroService, PersonService, SidenavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

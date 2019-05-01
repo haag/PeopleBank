@@ -1,9 +1,10 @@
 <header>
     <div class="container">
         <div class="example-sidenav-content">
-            <button type="button" (click)="toParent()">
-              Toggle sidenav
-            </button>
+            <button 
+            [class.active]="toggleActive" 
+            (click)="toggleRightSidenav()" 
+            class="rightSidenav_toggle"> Toggle Right Sidenav	</button>
           </div>
       <a routerLink="/" class="logo">AngularPeople</a>
       <nav>
