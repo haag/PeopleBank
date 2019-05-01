@@ -10,10 +10,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(private sidenav: SidenavService) { }
 
-  toggleRightSidenav() {
+  toggleSidenav() {
      this.sidenav.toggle();
   }
-  ngOnInit() {
-  }
+
+  ngOnInit() { }
 
 }

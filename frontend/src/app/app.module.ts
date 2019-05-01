@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { TESTComponent } from './test/test.component';
-import { HeroService } from './test/hero.service';
 import { CreatePersonComponent } from './create-person/create-person.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,7 +25,6 @@ import { SidenavService } from './sidenav/sidenav.service';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    TESTComponent,
     CreatePersonComponent,
     EditPersonComponent,
     TableComponent,
@@ -50,7 +47,7 @@ import { SidenavService } from './sidenav/sidenav.service';
     EditPersonComponent,
     TableComponent
   ],
-  providers: [HeroService, PersonService, SidenavService],
+  providers: [ PersonService, SidenavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

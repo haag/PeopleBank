@@ -2,18 +2,21 @@
     <div class="container">
         <div class="example-sidenav-content">
             <button 
-            [class.active]="toggleActive" 
-            (click)="toggleRightSidenav()" 
-            class="rightSidenav_toggle"> Toggle Right Sidenav	</button>
-          </div>
-      <a routerLink="/" class="logo">AngularPeople</a>
-      <nav>
-        <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/test">TEST</a></li>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/edit">Edit</a></li>
-        </ul>
-      </nav>
+                [class.active]="toggleActive" 
+                (click)="toggleSidenav()" 
+                class="sidenav-button"> Toggle Sidenav	
+            </button>
+        </div>
+      
+        <a routerLink="/" class="logo">AngularPeople</a>
+      
+        <nav>
+            <ul>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/test">TEST</a></li>
+                <li><a routerLink="/about">About</a></li>
+                <li><a routerLink="/edit">Edit</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>

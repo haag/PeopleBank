@@ -9,15 +9,15 @@
 [x] FE display data cards
 [x] FE Show some data, click to edit
 [x] Create an automated summary
+[x] Side nav
+[x] Add mission to list
+[x] Delete button on edit
 
 [] Accept image upload to DB
 [] Upload audio clip
 [] Add edit button to table
 [i] "+" to add more entries in create
 [] Button to hide/show entries
-[] Side nav
-[] Delete button on edit
-[] Add mission to list
 [] Auto calc age 
 
 [] Import contacts
