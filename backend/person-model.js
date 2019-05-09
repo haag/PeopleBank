@@ -19,6 +19,8 @@ const personSchema = new Schema({
     phone: String,
     email: String,
     contact: String,
+    mission: String,
+    description: String,
     
     //Default
     id: { type: Number, required: true },

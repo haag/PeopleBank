@@ -31,7 +31,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
-  displayedColumns: string[] = ['id', `firstName`, 'lastName', 'color', "tree"];
+  displayedColumns: string[] = [`firstName`, `lastName`, `birthdate`, `age`, `edit`];
   dataSource: MatTableDataSource<Person>;
   ngOnInit() {
     //Makes a call to retrieve the ppl data

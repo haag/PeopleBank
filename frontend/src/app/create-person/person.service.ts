@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Person } from './person';
+import { MatDialog } from '@angular/material';
+import { CreatePersonComponent } from './create-person.component';
+import { EditPersonComponent } from '../edit-person/edit-person.component';
+
 
 const api = '/api';
 //PRODUCTION
@@ -12,7 +16,7 @@ const baseURL = "http://localhost:4000";
 
 @Injectable()
 export class PersonService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private dialog: MatDialog) {}
 
     getPeople() {
       return this.http.get<Array<Person>>(`${baseURL}${api}/people`);
@@ -30,5 +34,19 @@ export class PersonService {
     deletePerson(person: Person) {
       return this.http.delete(`${baseURL}${api}/person/${person.id}`);
     }
+
+    openCreateDialog(){
+      const dialogRef = this.dialog.open(CreatePersonComponent, { });
+      dialogRef.disableClose = true; //Prevents esc and off click. esc has be allowed elsewhere
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    };
+
+    // openEditDialog(){
+    //   this.dialog.open(EditPersonComponent, { })
+    // }
+
 }
 

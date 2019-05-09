@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, OnInit, HostListener } from '@angular/core';
+import {MatDialog, MatDialogRef } from '@angular/material';
 import { CreatePersonComponent } from '../create-person/create-person.component';
 import { EditPersonComponent } from '../edit-person/edit-person.component'
 
@@ -24,22 +23,24 @@ export class AboutComponent implements OnInit {
   selectedPerson: Person;
 
 
+  // FOR CREATING
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CreatePersonComponent, { });
+    dialogRef.disableClose = true;
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   };
 
+  // FOR EDITING
   openEditDialog(prop) {
 
-    const dialogRef = this.dialog.open(EditPersonComponent);
+    const dialogRef = this.dialog.open(EditPersonComponent, { disableClose: true });
 
     const instance = dialogRef.componentInstance;
     instance.person = prop;
 
-    console.log('dialogRef', dialogRef);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

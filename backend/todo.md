@@ -13,21 +13,28 @@
 [x] Add mission to list
 [x] Delete button on edit
 
+[] Special section for quotes. Cards. Organize by category, Summary, Author, date 
+
+[] input with a clear button
 [] Accept image upload to DB
 [] Upload audio clip
-[] Add edit button to table
-[i] "+" to add more entries in create
+[] "+" to add more entries in create
 [] Button to hide/show entries
-[] Auto calc age 
+[] make a separate area for family history?
+
+[] Make month a tag that will search all Junes on 
+[] Auto calc age on table
+[] Defualt page size 10 on table
+[] Change columns on table
+[] Add edit button to table
+[] Add share person button to table
 
 [] Import contacts
-[] Host FE
 [] Set auto increment ID
 [] Deploy with KUDO
-FE
+[] Host FE
 
 Other:
 [] Tags (birthday month, relationship, )
-[] Search functionality
 [] View tiles / View table options
 [] Create custom form with only options you want

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Person } from './person';
 import { PersonService } from './person.service';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 
 @Component({
@@ -25,12 +25,18 @@ export class CreatePersonComponent implements OnInit {
   constructor(
     private personService: PersonService, 
     public dialog: MatDialog,
-    private formBuilder: FormBuilder) {}
-  
+    private formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<CreatePersonComponent>) { }
+
   ngOnInit() {
     this.selectedPerson = new Person();
   }
   
+
+  //Allows ESC to close dialog
+  @HostListener('window:keyup.esc') onKeyUp() {
+    this.dialogRef.close();
+  }
 
   email = new FormControl('', [Validators.required, Validators.email]);
 

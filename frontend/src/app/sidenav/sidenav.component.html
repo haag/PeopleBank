@@ -6,7 +6,12 @@
     </section>
     
     <mat-drawer #sidenav class="example-sidenav" mode="side" opened="true">
+        
+        <button mat-raised-button (click)="openCreateDialog()">Create New Person</button>
+        
         <p>Auto-resizing sidenav</p>
+
+
         <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
         <button (click)="showFiller = !showFiller" mat-raised-button>
             Toggle extra text

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Person } from '../create-person/person';
 import { PersonService } from '../create-person/person.service';
 import { FormControl, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-edit-person',
@@ -18,13 +18,20 @@ export class EditPersonComponent implements OnInit {
   selectedPerson: Person;
   person: Person;
 
-  constructor(private personService: PersonService, public dialog: MatDialog) {}
-
-  ngOnInit() {
-    this.getPeople();
-    this.onSelect()
-  }
-
+  constructor(
+    private personService: PersonService, 
+    public dialog: MatDialog,
+    private dialogRef: MatDialogRef<EditPersonComponent>) {}
+  
+    ngOnInit() {
+      this.getPeople();
+      this.onSelect()
+    }
+    
+    //Allows ESC to close dialog
+    @HostListener('window:keyup.esc') onKeyUp() {
+      this.dialogRef.close();
+    }
   email = new FormControl('', [Validators.required, Validators.email]);
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :

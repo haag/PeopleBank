@@ -2,7 +2,7 @@
 
 
 <div class ="create-container" *ngIf="!post; else forminfo" novalidate>
-  <h4>Create New Person</h4>
+  <h2 matDialogTitle>Create New Person</h2>
   <!-- <form class="form" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" > -->
 
 
@@ -100,8 +100,10 @@ THIS IS WIRED BUT HTE ONE ABOVE IS NOT
         </mat-form-field>
 
       </div>
-      <button (click)="cancel()">Cancel</button>
-      <button (click)="save()">Save</button>
+      <mat-dialog-actions align="end">
+          <button mat-button color="primary" matDialogClose (click)="cancel()">Dismiss</button>
+          <button mat-button matDialogClose (click)="save()">Save</button>
+      </mat-dialog-actions>
     </div>
   </div>
 <!-- </form> -->
