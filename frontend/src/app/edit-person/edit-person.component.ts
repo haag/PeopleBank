@@ -38,10 +38,6 @@ export class EditPersonComponent implements OnInit {
         this.email.hasError('email') ? 'Not a valid email' :
             '';
   }
-
-    enableAddMode() {
-      this.selectedPerson = new Person();
-    }
     
     cancel() {
       this.dialogRef.close();

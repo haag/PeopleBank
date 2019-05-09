@@ -12,6 +12,10 @@
 [x] Side nav
 [x] Add mission to list
 [x] Delete button on edit
+[x] Defualt page size 10 on table
+[x] Change columns on table
+[x] Add edit button to table
+
 
 [] Special section for quotes. Cards. Organize by category, Summary, Author, date 
 
@@ -19,20 +23,26 @@
 [] Accept image upload to DB
 [] Upload audio clip
 [] "+" to add more entries in create
-[] Button to hide/show entries
+[] Button to hide/show additional options
 [] make a separate area for family history?
+[] Clean rerender() when deleting or creating a person
+[] Make selectable? Delete all, download all, select all, share all
+[] Row's onHover shading
 
-[] Make month a tag that will search all Junes on 
+[] Make month a bday tag that will search all Junes on 
 [] Auto calc age on table
-[] Defualt page size 10 on table
-[] Change columns on table
-[] Add edit button to table
+
+[] Delete button a garbage icon
+[] Are you sure delete prompt?
+
 [] Add share person button to table
 
 [] Import contacts
 [] Set auto increment ID
 [] Deploy with KUDO
 [] Host FE
+[] Dockerize it!
+[] Authentication
 
 Other:
 [] Tags (birthday month, relationship, )
