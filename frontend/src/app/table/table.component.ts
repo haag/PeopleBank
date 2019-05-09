@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 //Gathering Data from DB
 import { PersonService } from '../create-person/person.service';
 import { Person } from '../create-person/person';
+import { EditPersonService } from '../edit-person/edit-person.service';
+import { EditPersonComponent } from '../edit-person/edit-person.component';
 
 
 /**
@@ -26,7 +28,11 @@ import { Person } from '../create-person/person';
 export class TableComponent implements OnInit {
   x = ""
   
-  constructor(private personService: PersonService) {  }
+  constructor(
+    private personService: PersonService, 
+    private editPersonService: EditPersonService,
+    public dialog: MatDialog
+    ) {  }
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -72,11 +78,15 @@ export class TableComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
+    
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
+  
+  openEditDialog(prop) {
+    this.editPersonService.openEditDialog(prop)
+  };
+
 
 }
-

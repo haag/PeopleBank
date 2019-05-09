@@ -13,6 +13,10 @@
               <input matInput [(ngModel)]="selectedPerson.firstName" placeholder="First name" >
           </mat-form-field>
 
+       
+<div [(ngModel)]="selectedPerson.id" >{{selectedPerson.id}}</div>
+       
+
           <mat-form-field>
             <input matInput [(ngModel)]="selectedPerson.lastName" placeholder="Last name" />
           </mat-form-field>
@@ -89,7 +93,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput [(ngModel)]="selectedPerson.contact" placeholder="Other contat" />
+            <input matInput [(ngModel)]="selectedPerson.contact" placeholder="Other contact" />
           </mat-form-field>
         </div>
         <button (click)="deletePerson(person)">Delete</button>

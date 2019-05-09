@@ -33,14 +33,15 @@
       </ng-container>
 
       <ng-container matColumnDef="edit">
-        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <th mat-header-cell *matHeaderCellDef>  </th>
         <td mat-cell *matCellDef="let e"> {{e.edit}}
             <mat-icon>
-                <button mat-icon-button class="mat-icon-button" aria-label="Favorite">
+                <button mat-icon-button class="mat-icon-button" (click)="openEditDialog(e)" >
                     <mat-icon >edit</mat-icon>
                 </button>
             </mat-icon> 
         </td>
+      
 
       
       </ng-container>

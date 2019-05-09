@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Person } from './person';
 import { MatDialog } from '@angular/material';
 import { CreatePersonComponent } from './create-person.component';
-import { EditPersonComponent } from '../edit-person/edit-person.component';
 
 
 const api = '/api';
@@ -43,10 +42,6 @@ export class PersonService {
         console.log('The dialog was closed');
       });
     };
-
-    // openEditDialog(){
-    //   this.dialog.open(EditPersonComponent, { })
-    // }
 
 }
 

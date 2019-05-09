@@ -18,6 +18,7 @@ import { TableComponent } from './table/table.component';
 import { CardsComponent } from './cards/cards.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SidenavService } from './sidenav/sidenav.service';
+import { EditPersonService } from './edit-person/edit-person.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { SidenavService } from './sidenav/sidenav.service';
     EditPersonComponent,
     TableComponent
   ],
-  providers: [ PersonService, SidenavService],
+  providers: [ PersonService, SidenavService, EditPersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

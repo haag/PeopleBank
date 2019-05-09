@@ -14,9 +14,7 @@ export class CreatePersonComponent implements OnInit {
   formGroup: FormGroup;
   titleAlert: string = 'This field is required';
   post: any = '';
-  
-  addingPerson = true;
-  editingPerson = false;
+
   people: any = [];
   selectedPerson: Person;
  
@@ -46,14 +44,7 @@ export class CreatePersonComponent implements OnInit {
             '';
   }
 
-
-
-
-
-
   cancel() {
-    this.addingPerson = false;
-    this.selectedPerson = null;
     this.dialog.closeAll();
   }
   
@@ -61,18 +52,8 @@ export class CreatePersonComponent implements OnInit {
     this.selectedPerson = person;
   }
 
-  
-  update() {
-    this.personService.updatePerson(this.selectedPerson).subscribe(person => {
-      this.addingPerson = false;
-      this.selectedPerson = null;
-    });
-  }
-
   save() {
       this.personService.addPerson(this.selectedPerson).subscribe(person => {
-        // this.addingPerson = false;
-        // this.selectedPerson = null;
         this.people.push(person);
         this.dialog.closeAll();
       });
