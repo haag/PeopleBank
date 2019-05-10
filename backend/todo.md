@@ -15,6 +15,7 @@
 [x] Defualt page size 10 on table
 [x] Change columns on table
 [x] Add edit button to table
+[x] Delete button a garbage icon
 
 
 [] Special section for quotes. Cards. Organize by category, Summary, Author, date 
@@ -29,10 +30,10 @@
 [] Make selectable? Delete all, download all, select all, share all
 [] Row's onHover shading
 
+[] Birthday in x amount of days
 [] Make month a bday tag that will search all Junes on 
 [] Auto calc age on table
 
-[] Delete button a garbage icon
 [] Are you sure delete prompt?
 
 [] Add share person button to table

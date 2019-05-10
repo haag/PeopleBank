@@ -96,10 +96,14 @@
             <input matInput [(ngModel)]="selectedPerson.contact" placeholder="Other contact" />
           </mat-form-field>
         </div>
-        <button (click)="deletePerson(person)">Delete</button>
-        <button (click)="cancel()">Cancel</button>
-        <button (click)="save()">Save</button>
 
+        <mat-dialog-actions align="end" >
+            <button mat-button matDialogClose mat-icon-button class="mat-icon-button" (click)="deletePerson(person)" >
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-button matDialogClose (click)="cancel()">Dismiss</button>
+            <button mat-button matDialogClose color="primary" (click)="save()">Save</button>
+      </mat-dialog-actions>
       </div>
     </div>
 </div>
