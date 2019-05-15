@@ -19,7 +19,7 @@ server.use(morgan('combined'))
 server.use(bodyParser.urlencoded({ extended: false }))
 
 server.get('/', (req,res) => {
-    res.send("Get is Working!")
+    res.send("Docker is Working!")
     console.log("Get is working")
 })
 server.use('/api', routes)
@@ -27,5 +27,5 @@ server.use('/api', routes)
 
 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 server.listen(port, () => {console.log(`listening on ${port}`)})
