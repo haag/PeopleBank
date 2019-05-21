@@ -1,19 +1,19 @@
-<header>
+<header class="header">
     <div class="container">
-        <div class="example-sidenav-content">
+        <div class="sidenav-toggle-container">
             <button 
+                class="sidenav-toggle-button"
                 [class.active]="toggleActive" 
-                (click)="toggleSidenav()" 
-                class="sidenav-button">
-           
-                    {{this.sidenav.isOpen() === true ? 'X' : '☰'}}	
-
+                (click)="toggleSidenav()" >
+                {{this.sidenav.isOpen() === true ? 'X' : '☰'}}	
             </button>
         </div>
       
-        <a routerLink="/" class="logo">AngularPeople</a>
+        <div class="app-name">
+            <a routerLink="/" class="logo">AngularPeople</a>
+        </div>
       
-        <nav>
+        <nav class="nav-links">
             <ul>
                 <li><a routerLink="/">Home</a></li>
                 <li><a routerLink="/test">TEST</a></li>
@@ -21,5 +21,9 @@
                 <li><a routerLink="/edit">Edit</a></li>
             </ul>
         </nav>
+
+        <div class="login-button">
+            <button class="inout"> Login </button>
+        </div>
     </div>
 </header>
