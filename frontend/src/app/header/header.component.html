@@ -4,7 +4,10 @@
             <button 
                 [class.active]="toggleActive" 
                 (click)="toggleSidenav()" 
-                class="sidenav-button"> Toggle Sidenav	
+                class="sidenav-button">
+           
+                    {{this.sidenav.isOpen() === true ? 'X' : '☰'}}	
+
             </button>
         </div>
       

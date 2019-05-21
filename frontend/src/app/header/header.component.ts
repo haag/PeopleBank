@@ -9,7 +9,7 @@ import { SidenavService } from '../sidenav/sidenav.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private sidenav: SidenavService) { }
-
+  
   toggleSidenav() {
      this.sidenav.toggle();
   }

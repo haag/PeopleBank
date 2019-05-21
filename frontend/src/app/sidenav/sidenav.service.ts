@@ -17,7 +17,12 @@ export class SidenavService {
 		return this.sidenav.close();
 	}
 
-	public toggle(): void {
+	//States whether is open or not
+	public isOpen() {
+		return this.sidenav.opened;
+	}
+	
+	public toggle() {
 		this.sidenav.toggle();
 	}
 }
