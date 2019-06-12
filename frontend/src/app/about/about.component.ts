@@ -25,7 +25,7 @@ export class AboutComponent implements OnInit {
 
   // FOR CREATING
   openCreateDialog(): void {
-    const dialogRef = this.dialog.open(CreatePersonComponent, { });
+    const dialogRef = this.dialog.open(CreatePersonComponent, { panelClass: 'custom-dialog-container' });
     dialogRef.disableClose = true;
 
     dialogRef.afterClosed().subscribe(result => {
@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
   // FOR EDITING
   openEditDialog(prop) {
 
-    const dialogRef = this.dialog.open(EditPersonComponent, { disableClose: true });
+    const dialogRef = this.dialog.open(EditPersonComponent, { disableClose: true, panelClass: 'custom-dialog-container' });
 
     const instance = dialogRef.componentInstance;
     instance.person = prop;

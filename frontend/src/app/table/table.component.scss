@@ -40,7 +40,7 @@ table {
   .example-element-diagram {
     min-width: 80px;
     border: 2px solid black;
-    padding: 8px;
+    // padding: 8px;
     font-weight: lighter;
     margin: 8px 0;
     height: 104px;
@@ -52,10 +52,7 @@ table {
     line-height: normal;
   }
   
-  .example-element-description {
-    padding: 16px;
-  }
-  
+
   .example-element-description-attribution {
     opacity: 0.5;
   }

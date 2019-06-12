@@ -14,12 +14,12 @@
     }
 }
 
-
 .create-container {
     display: flex;
     flex-direction: column;
   }
   
   .create-container > * {
-    width: 100%;
+    max-width: 700px;
+    width: 500px;
   }

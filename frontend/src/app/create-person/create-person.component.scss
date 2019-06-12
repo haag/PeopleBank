@@ -1,9 +1,83 @@
-.example-container {
+// .create-container {
+//   height: calc(100vh - 128px)!important;
+//   overflow-y: auto;
+// }
+main {
+  overflow-y: auto;
+  height: 347px;
+}
+
+.dialog-header {
+  align-items: center;
+  border-bottom: 1px solid #dadce0;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  
+}
+
+.mat-scroll-shrink {
+  height: 45px;
+  display: flex;
+}
+
+.fb1 {
+  margin-right: auto;
+  margin-left: 25px;
+}
+
+.fb3 {
+  margin-right: 25px;
+  margin-left: 10px;
+}
+
+// .dialog-footer {
+//   align-items: center center;
+//   border-top: 1px solid #dadce0;
+//   padding: 8px 34px 5px 38px;
+//   font-size: 1rem;
+//   font-weight: 500;
+//   line-height: 1.5rem;
+//   vertical-align: middle;
+//   font-weight: 500;
+// }
+
+  .editfields {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
   }
-  
-  .example-container > * {
-    width: 100%;
+
+  .mat-form {
+    width: 240px;
+    margin: 0px 10px;
   }
+
   
+  .conditional {
+    white-space:nowrap;
+  }
+  .conditional > .close-button {
+    display: inline-block;
+  }
+
+  .close-button, .close-button1, .close-button3 {
+    display: inline;
+  }
+
+  
+.icon_account_circle {
+    height:48px;
+    width:48px ;
+    font-size:48px;
+    color: rgba(0,0,0,.4);
+    margin: 15px 15px 0px 25px; 
+}
+
+.mat-form1 {
+  margin-top: 12px;
+  padding: 0px;
+}
+
+

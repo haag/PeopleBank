@@ -17,14 +17,23 @@ export class CreatePersonComponent implements OnInit {
 
   people: any = [];
   selectedPerson: Person;
- 
   
+  IsVisible: boolean = false;
+  changeText: boolean;
   //MatDialog added so that the dialog is closed upon save()
   constructor(
     private personService: PersonService, 
     public dialog: MatDialog,
     private formBuilder: FormBuilder,
-    private dialogRef: MatDialogRef<CreatePersonComponent>) { }
+    private dialogRef: MatDialogRef<CreatePersonComponent>) { this.changeText = false }
+    
+
+    
+    toggle() {
+        if(this.IsVisible) this.IsVisible = false
+        else if(!this.IsVisible) this.IsVisible = true 
+    }
+
 
   ngOnInit() {
     this.selectedPerson = new Person();

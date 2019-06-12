@@ -35,7 +35,7 @@ export class PersonService {
     }
 
     openCreateDialog(){
-      const dialogRef = this.dialog.open(CreatePersonComponent, { });
+      const dialogRef = this.dialog.open(CreatePersonComponent, {panelClass: 'custom-dialog-container' });
       dialogRef.disableClose = true; //Prevents esc and off click. esc has be allowed elsewhere
   
       dialogRef.afterClosed().subscribe(result => {

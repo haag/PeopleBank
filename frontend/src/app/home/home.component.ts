@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   listView = false;
 
   openCreateDialog(): void {
-    const dialogRef = this.dialog.open(CreatePersonComponent, { });
+    const dialogRef = this.dialog.open(CreatePersonComponent, {panelClass: 'custom-dialog-container' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
 
   openEditDialog(prop) {
 
-    const dialogRef = this.dialog.open(EditPersonComponent);
+    const dialogRef = this.dialog.open(EditPersonComponent, {});
 
     const instance = dialogRef.componentInstance;
     instance.person = prop;

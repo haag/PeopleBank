@@ -11,10 +11,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort'; 
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  imports: [ MatSidenavModule, MatSortModule, MatPaginatorModule, MatTableModule, MatListModule, MatSelectModule, MatCardModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule],
-  exports: [ MatSidenavModule, MatSortModule, MatPaginatorModule, MatTableModule, MatListModule,  MatSelectModule, MatCardModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule],
+  imports: [ MatToolbarModule, MatSidenavModule, MatSortModule, MatPaginatorModule, MatTableModule, MatListModule, MatSelectModule, MatCardModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule],
+  exports: [ MatToolbarModule, MatSidenavModule, MatSortModule, MatPaginatorModule, MatTableModule, MatListModule,  MatSelectModule, MatCardModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule],
 
 })
 export class MaterialModule { }

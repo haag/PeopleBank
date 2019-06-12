@@ -16,11 +16,11 @@
 [x] Change columns on table
 [x] Add edit button to table
 [x] Delete button a garbage icon
+[x] input with a clear button
 
 
 [] Special section for quotes. Cards. Organize by category, Summary, Author, date 
 
-[] input with a clear button
 [] Accept image upload to DB
 [] Upload audio clip
 [] "+" to add more entries in create

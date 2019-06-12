@@ -48,7 +48,7 @@ import { EditPersonService } from './edit-person/edit-person.service';
     EditPersonComponent,
     TableComponent
   ],
-  providers: [ PersonService, SidenavService, EditPersonService],
+  providers: [ PersonService, EditPersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

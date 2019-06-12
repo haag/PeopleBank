@@ -8,7 +8,7 @@ export class EditPersonService {
 
     openEditDialog(prop) {
 
-        const dialogRef = this.dialog.open(EditPersonComponent, { });
+        const dialogRef = this.dialog.open(EditPersonComponent, {panelClass: 'custom-dialog-container' });
 
         dialogRef.disableClose = true; //Prevents esc and off click. esc has be allowed elsewhere
 
